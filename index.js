@@ -11,18 +11,16 @@ const drivers = ['Bobby', 'Sammy', 'Sally', 'Annette', 'Sarah', 'Bobby']
 
 function findMatching(array, name) {
     //create an anonymous function
-    return array.filter(function (driver) {
-         return driver.toLowerCase() === name.toLowerCase() 
-    })
+    return array.filter(driver=>driver.toLowerCase() === name.toLowerCase())
   };
   findMatching(drivers, 'Bobby')
+
+
 
  // This function takes an array of drivers' names and a string as arguments for 
  //querying the array,and returns all drivers whose names begin with the provided letters
   function fuzzyMatch(array, name) {
-    return array.filter(function (driver) { 
-        return driver.toLowerCase().substring(0, name.length) === name.toLowerCase()
-    })
+    return array.filter(driver =>driver.toLowerCase().substring(0, name.length) === name.toLowerCase())
   }
   fuzzyMatch(drivers,'Bobby')
 
@@ -30,7 +28,5 @@ function findMatching(array, name) {
   //name and hometown. The function should return each element whose name property matches the provided string argument.
 
   function matchName(drivers, argument) {
-    return drivers.filter(function (driver) { 
-        return driver.name === argument 
-    })
+    return drivers.filter(driver=>driver.name === argument)
   }
